@@ -1,6 +1,7 @@
 require("sari.remap")
 require("sari.lazy")
-require("sari.set")
+require("sari.options")
+require("sari.autocmds")
 
 -- set colorscheme
 vim.cmd.colorscheme("onedark")
