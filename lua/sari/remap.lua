@@ -18,3 +18,6 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 
 -- Remap for finding a highlighted text in visual mode
 vim.keymap.set('v', '<leader>f', '"fy/<C-r>f<CR>')
+
+-- Git blame per line toggle
+vim.keymap.set('n', '<leader>gb',  ':GitBlameToggle<CR>')
