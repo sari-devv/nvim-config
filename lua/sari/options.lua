@@ -9,7 +9,10 @@ vim.opt.shiftwidth = 4
 vim.opt.sts = 4
 vim.opt.expandtab = true
 
--- Case-insensitive searching unless \C or one or more capital letters in the 
+-- Case-insensitive searching unless \C or one or more capital letters in the
 -- search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- Limit the popup menu height
+vim.opt.pumheight = 10
