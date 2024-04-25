@@ -17,9 +17,9 @@ vim.keymap.set('n', '<leader>-', '<c-w>s')
 formatFile = function()
     active_clients = vim.lsp.get_active_clients();
     if next(active_clients) == nil then
-       return 
+        return
     end
-    
+
     vim.lsp.buf.format { async = true }
 end
 
@@ -30,4 +30,4 @@ vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('v', '<leader>f', '"fy/<C-r>f<CR>')
 
 -- Git blame per line toggle
-vim.keymap.set('n', '<leader>gb',  ':GitBlameToggle<CR>')
+vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>')

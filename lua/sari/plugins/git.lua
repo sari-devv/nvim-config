@@ -1,12 +1,9 @@
 return {
     'tpope/vim-fugitive',
     {
-        'f-person/git-blame.nvim',
+        'lewis6991/gitsigns.nvim',
         config = function()
-            require('gitblame').setup {
-                enabled = false,
-                blame_delay = 500
-            }
+            require('gitsigns').setup()
         end
     }
 }
