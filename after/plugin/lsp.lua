@@ -1,3 +1,27 @@
+-- Setup mason plugins
+require('mason').setup()
+require('mason-lspconfig').setup()
+
+-- Setup neodev plugin for neovim development
+require('neodev').setup()
+
+local lspconfig = require('lspconfig')
+
+lspconfig.pyright.setup {}
+lspconfig.clangd.setup {}
+
+lspconfig.lua_ls.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = {
+                    "vim"
+                }
+            }
+        }
+    }
+}
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)

@@ -43,6 +43,9 @@ return {
                 end,
             },
             completion = { completeopt = 'menu,menuone,noinsert' },
+            auto_brackets = {
+                'cpp', 'lua'
+            },
 
             -- For an understanding of why these mappings were
             -- chosen, you will need to read `:help ins-completion`
