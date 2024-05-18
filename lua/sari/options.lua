@@ -16,3 +16,6 @@ vim.opt.smartcase = true
 
 -- Limit the popup menu height
 vim.opt.pumheight = 10
+
+-- Keep the cursor in the middle of the screen
+vim.opt.scrolloff = 999
