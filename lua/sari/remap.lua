@@ -9,6 +9,9 @@ vim.keymap.set("i", "jj", "<ESC>")
 -- Add a new blank line and staying in normal mode
 vim.keymap.set('n', '<leader>o', 'o<ESC>')
 
+-- Paste the zero buffer (the one where yanked text goes to).
+vim.keymap.set({'n', 'v'}, '<leader>p', '"0p')
+
 -- Remaps for splitting windows
 vim.keymap.set('n', '<leader>|', '<c-w>v')
 vim.keymap.set('n', '<leader>-', '<c-w>s')
