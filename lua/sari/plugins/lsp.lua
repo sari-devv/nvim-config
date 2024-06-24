@@ -49,8 +49,16 @@ return {
             --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
             --    function will be executed to configure the current buffer
             vim.api.nvim_create_autocmd("LspAttach", {
+
                 group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
                 callback = function(event)
+                    vim.api.nvim_create_autocmd('BufWritePre', {
+                        buffer = event.buf,
+                        callback = function()
+                            vim.lsp.buf.format()
+                        end
+                    })
+
                     -- NOTE: Remember that Lua is a real programming language, and as such it is possible
                     -- to define small helper and utility functions so you don't have to repeat yourself.
                     --
@@ -164,7 +172,12 @@ return {
             --  - settings (table): Override the default settings passed when initializing the server.
             --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
             local servers = {
-                clangd = {},
+                clangd = {
+                    cmd = {
+                        "clangd",
+                        "--header-insertion=never",
+                    }
+                },
                 -- gopls = {},
                 -- pyright = {},
                 -- rust_analyzer = {},
@@ -294,7 +307,7 @@ return {
 
                     -- If you prefer more traditional completion keymaps,
                     -- you can uncomment the following lines
-                   ['<CR>'] = cmp.mapping.confirm { select = true },
+                    ['<CR>'] = cmp.mapping.confirm { select = true },
                     --['<Tab>'] = cmp.mapping.select_next_item(),
                     --['<S-Tab>'] = cmp.mapping.select_prev_item(),
 

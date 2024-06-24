@@ -21,6 +21,14 @@ return {
                         return require("nvim-navic").get_location()
                     end
                 }
+            },
+            sections = {
+                lualine_c = {
+                    {
+                        'filename',
+                        path = 1
+                    }
+                }
             }
         }
     end

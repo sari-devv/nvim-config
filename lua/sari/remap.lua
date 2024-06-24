@@ -1,16 +1,16 @@
 vim.g.mapleader = " "
 
 -- Netrw explorer
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>fx", ":Oil<CR>", { desc = "Open file explorer" })
 
 -- Remap for ESC button
-vim.keymap.set("i", "jj", "<ESC>")
+vim.keymap.set("i", "jj", "<ESC>", { desc = "Enter normal mode" })
 
 -- Add a new blank line and staying in normal mode
-vim.keymap.set('n', '<leader>o', 'o<ESC>')
+vim.keymap.set('n', '<leader>o', 'o<ESC>', { desc = "Insert a new line" })
 
 -- Paste the zero buffer (the one where yanked text goes to).
-vim.keymap.set({'n', 'v'}, '<leader>p', '"0p')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"0p', { desc = "Paste form the 0 buffer (yanked text)" })
 
 -- Remaps for splitting windows
 vim.keymap.set('n', '<leader>|', '<c-w>v')
@@ -27,10 +27,10 @@ formatFile = function()
 end
 
 -- Remap for writing file
-vim.keymap.set('n', '<leader>w', ':w<CR>')
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = "Write buffer" })
 
 -- Remap for finding a highlighted text in visual mode
-vim.keymap.set('v', '<leader>f', '"fy/<C-r>f<CR>')
+vim.keymap.set('v', '<leader>f', '"fy/<C-r>f<CR>', { desc = "Find highlighted text" })
 
 -- Git blame per line toggle
-vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>')
+vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', { desc = "Toggle line blame" })
