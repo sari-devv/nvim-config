@@ -55,7 +55,7 @@ return {
                     vim.api.nvim_create_autocmd('BufWritePre', {
                         buffer = event.buf,
                         callback = function()
-                            vim.lsp.buf.format()
+                            require("conform").format({ bufnr = event.buf })
                         end
                     })
 
@@ -176,6 +176,17 @@ return {
                     cmd = {
                         "clangd",
                         "--header-insertion=never",
+                        "--all-scopes-completion",
+                        "--background-index",
+                        "--pch-storage=disk",
+                        "--cross-file-rename",
+                        "--log=info",
+                        "--completion-style=detailed",
+                        "--enable-config",
+                        "--clang-tidy",
+                        "--offset-encoding=utf-16",
+                        "--fallback-style=llvm",
+                        "--function-arg-placeholders"
                     }
                 },
                 -- gopls = {},
