@@ -1,4 +1,9 @@
 return {
-	'navarasu/onedark.nvim',
+    {
+        'navarasu/onedark.nvim',
+        opts = {
+            transparent = true
+        }
+    },
     'shaunsingh/solarized.nvim'
 }

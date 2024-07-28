@@ -16,16 +16,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>p', '"0p', { desc = "Paste form the 0 buff
 vim.keymap.set('n', '<leader>|', '<c-w>v')
 vim.keymap.set('n', '<leader>-', '<c-w>s')
 
--- A function to format the file if we are attached to an LSP.
-formatFile = function()
-    active_clients = vim.lsp.get_active_clients();
-    if next(active_clients) == nil then
-        return
-    end
-
-    vim.lsp.buf.format { async = true }
-end
-
 -- Remap for writing file
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = "Write buffer" })
 
