@@ -1,5 +1,5 @@
 -- set colorscheme
-vim.cmd.colorscheme("onedark")
+vim.cmd.colorscheme("catppuccin-frappe")
 
 -- Change color of comments
 -- vim.api.nvim_set_hl(0, "Comment", { fg = 'black'})

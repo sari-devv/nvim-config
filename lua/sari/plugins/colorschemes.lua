@@ -5,5 +5,6 @@ return {
             transparent = true
         }
     },
-    'shaunsingh/solarized.nvim'
+    'shaunsingh/solarized.nvim',
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 }
