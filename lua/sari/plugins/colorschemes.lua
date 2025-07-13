@@ -5,5 +5,13 @@ return {
             transparent = true
         }
     },
-    'shaunsingh/solarized.nvim'
+    'shaunsingh/solarized.nvim',
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = true
+        },
+    }
 }
